@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap");
+
+:root {
+  --purple-500: hsl(263, 55%, 52%);
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background: var(--grey-100);
+  color: var(--black);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.testimonials {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 70px 24px;
+}
+
+.testimonials__container {
+  width: 100%;
+  max-width: 1110px;
+}
+
+.testimonials__grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+.testimonial-card {
+  border-radius: 8px;
+  padding: 26px 32px 32px;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+  background: var(--white);
+  color: var(--grey-500);
+}
+
+.testimonial-card__header {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 18px;
+}
+
+.testimonial-card__avatar img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.testimonial-card__name {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  color: inherit;
+}
+
+.testimonial-card__status {
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 11px;
+  opacity: 0.5;
+  color: inherit;
+}
+
+.testimonial-card__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  color: inherit;
+}
+
+.testimonial-card__quote {
+  margin: 0;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.7;
+  opacity: 0.7;
+  color: inherit;
+}
+
+/* Desktop: 4-column grid with named card positions */
+@media (min-width: 1024px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: start;
+  }
+
+  .testimonial-card--daniel {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+  .testimonial-card--jonathan {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .testimonial-card--kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+  .testimonial-card--jeanette {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .testimonial-card--patrick {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
+}
+
+/* Daniel */
+.testimonial-card--daniel {
+  background: var(--purple-500);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Quotation mark background image */
+.testimonial-card--daniel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 80px;
+  width: 104px;
+  height: 102px;
+  background: url("./images/bg-pattern-quotation.svg") no-repeat center /
+    contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.testimonial-card--daniel .testimonial-card__header,
+.testimonial-card--daniel .testimonial-card__content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-card--daniel .testimonial-card__avatar img {
+  border-color: hsl(264, 82%, 70%);
+}
+.testimonial-card--jonathan .testimonial-card__avatar img {
+  border-color: hsl(217, 19%, 50%);
+}
+.testimonial-card--patrick .testimonial-card__avatar img {
+  border-color: hsl(219, 29%, 30%);
+}
+
+/* Jonathan */
+.testimonial-card--jonathan {
+  background: var(--grey-500);
+  color: var(--white);
+}
+
+/* Patrick */
+.testimonial-card--patrick {
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+.testimonial-card--jeanette .testimonial-card__avatar img,
+.testimonial-card--kira .testimonial-card__avatar img {
+  border-color: hsl(263, 55%, 52%);
+}
+
+.testimonial-card--jeanette .testimonial-card__name,
+.testimonial-card--kira .testimonial-card__name {
+  color: var(--dark-blue);
+}
